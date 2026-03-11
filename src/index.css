@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 60% 97%;
+    --foreground: 230 25% 15%;
+
+    --card: 220 40% 96%;
+    --card-foreground: 230 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 15%;
+
+    --primary: 228 85% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 95%;
+    --secondary-foreground: 228 85% 40%;
+
+    --muted: 220 30% 92%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 228 85% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 228 85% 40%;
+
+    --radius: 1rem;
+
+    --hero-gradient-start: 220 80% 92%;
+    --hero-gradient-end: 228 85% 80%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-[1280px] mx-auto px-6 md:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .subtitle-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight;
+    color: hsl(var(--foreground));
+  }
+
+  .body-text {
+    @apply text-base leading-relaxed;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .cta-button {
+    @apply inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .cta-button:hover {
+    background: hsl(228 85% 35%);
+    transform: translateY(-1px);
+  }
+
+  .cta-button-outline {
+    @apply inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 border;
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+    background: transparent;
+  }
+
+  .cta-button-outline:hover {
+    background: hsl(var(--secondary));
+  }
+
+  .card-arooth {
+    @apply rounded-2xl overflow-hidden transition-all duration-300;
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card-arooth:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.2);
+  }
+
+  .grid-line {
+    background: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0.2) 1px,
+      transparent 1px
+    );
+    background-size: 100% 80px;
+  }
+
+  .hero-bg {
+    background: linear-gradient(
+      180deg,
+      hsl(220 80% 95%) 0%,
+      hsl(225 80% 90%) 40%,
+      hsl(228 70% 85%) 100%
+    );
+  }
+
+  .marquee-track {
+    @apply flex whitespace-nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .stat-odometer {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+    color: hsl(var(--primary));
+  }
+
+  .about-us-title-flex-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3.75rem;
+    width: 100%;
+    max-width: 47.25rem;
+  }
+
+  .about-us-title {
+    color: #1A212F;
+    font-size: 48px;
+    line-height: 1.2;
+    
+    margin-bottom: 1.375rem;
+    letter-spacing: -0.03em;
+  }
+
+  .w-background-video {
+    color: #fff;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .w-background-video > video {
+    object-fit: cover;
+    background-position: 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    inset: 0;
+  }
+}
