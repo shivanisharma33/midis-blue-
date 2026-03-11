@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section ref={containerRef} className="relative h-[300vh] bg-white">
       {/* Sticky Container */}
-      <div className="sticky top-0 h-screen w-full flex flex-col overflow-hidden pt-32 lg:pt-48">
+      <div className="sticky top-0 h-screen w-full flex flex-col overflow-hidden pt-16 sm:pt-20 md:pt-32 lg:pt-48">
         
         {/* Background Grid & Gradient */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
@@ -129,7 +129,7 @@ const HeroSection = () => {
           {/* Separator Line & Sub-content */}
           <motion.div 
             style={{ opacity: textOpacity, y: useTransform(scrollYProgress, [0, 0.2], [0, 40]) }}
-            className="w-full border-t border-gray-200/60 pt-10 pb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-12"
+            className="w-full border-t border-gray-200/60 pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-12 md:pb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-12"
           >
             <motion.div
               initial="hidden"
@@ -144,7 +144,7 @@ const HeroSection = () => {
               }}
               className="max-w-[460px] flex flex-wrap"
             >
-              {"At Arooth, we blend creativity with strategy to build digital experiences that move brands forward. From crafting standout websites.".split(" ").map((word, i) => (
+              {"At midis, we blend creativity with strategy to build digital experiences that move brands forward. From crafting standout websites.".split(" ").map((word, i) => (
                 <motion.span
                   key={i}
                   variants={{
@@ -152,7 +152,7 @@ const HeroSection = () => {
                     visible: { opacity: 1, y: 0 }
                   }}
                   transition={{ duration: 0.4 }}
-                  className="text-[#1A212F] text-[17px] md:text-[19px] font-medium leading-[1.55] mr-[0.3em] inline-block"
+                  className="text-[#1A212F] text-sm sm:text-base md:text-[17px] lg:text-[19px] font-medium leading-[1.55] mr-[0.3em] inline-block"
                 >
                   {word}
                 </motion.span>
@@ -163,11 +163,12 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 0.8 }}
+              className="w-full sm:w-auto"
             >
-              <button className="group flex items-center bg-[#F1F6FF] hover:bg-[#E8F0FF] pl-7 pr-1.5 py-1.5 rounded-full transition-all duration-300 border border-white shadow-sm overflow-hidden active:scale-95">
-                <span className="text-[#1A212F] font-bold text-[15px] md:text-[16px] mr-4 whitespace-nowrap">Get Started Now</span>
-                <div className="w-11 h-11 bg-[#003CFF] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 shrink-0 shadow-lg shadow-blue-500/20">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <button className="group flex items-center w-full sm:w-auto justify-center sm:justify-start bg-[#F1F6FF] hover:bg-[#E8F0FF] px-6 sm:px-7 py-2.5 sm:py-1.5 rounded-full transition-all duration-300 border border-white shadow-sm overflow-hidden active:scale-95">
+                <span className="text-[#1A212F] font-bold text-sm sm:text-[15px] md:text-[16px] mr-3 sm:mr-4 whitespace-nowrap">Get Started Now</span>
+                <div className="w-10 h-10 sm:w-11 sm:h-11 bg-[#003CFF] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 shrink-0 shadow-lg shadow-blue-500/20">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
                   </svg>
                 </div>

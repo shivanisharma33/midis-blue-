@@ -36,33 +36,33 @@ const AboutSection = () => {
       <section
         id="about-us"
         ref={containerRef}
-        className="py-24 md:py-32 bg-white overflow-hidden"
+        className="py-12 sm:py-18 md:py-24 lg:py-32 bg-white overflow-hidden"
       >
         <div className="section-container">
           <div className="flex flex-col lg:flex-row items-center lg:items-center lg:gap-20">
 
             {/* Left Column: Big Stat + Badge */}
-            <div className="w-full lg:w-[48%] relative flex flex-col items-center lg:items-start justify-center py-10">
+            <div className="w-full lg:w-[48%] relative flex flex-col items-center lg:items-start justify-center py-4 sm:py-8 lg:py-10">
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="absolute top-0 left-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-100 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+                className="absolute top-0 left-0 flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-gray-100 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
               >
                 <div className="text-[#003CFF]">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2L15 8H22L17 13L19 20L12 16L5 20L7 13L2 8H9L12 2Z" />
                   </svg>
                 </div>
-                <span className="text-[#003CFF] font-bold text-[13px] tracking-tight">About Us</span>
+                <span className="text-[#003CFF] font-bold text-xs sm:text-[13px] tracking-tight">About Us</span>
               </motion.div>
 
-              <div className="relative mt-24 lg:mt-0 select-none">
+              <div className="relative mt-16 sm:mt-20 lg:mt-0 select-none">
                 <motion.h2
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-[140px] md:text-[200px] lg:text-[240px] font-black text-[#003CFF] leading-[0.8] tracking-[-0.08em]"
+                  className="text-[80px] sm:text-[140px] md:text-[200px] lg:text-[240px] font-black text-[#003CFF] leading-[0.8] tracking-[-0.08em]"
                   style={{ fontFamily: 'Outfit, sans-serif' }}
                 >
                   40+
@@ -72,15 +72,15 @@ const AboutSection = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="absolute -left-6 md:-left-16 top-[45%] bg-[#EAEEFF] px-4 py-2 rounded-lg shadow-sm border border-white"
+                  className="absolute -left-3 sm:-left-6 md:-left-16 top-[45%] bg-[#EAEEFF] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-white"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 text-[#4353FF] opacity-80 overflow-hidden rounded-sm">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 text-[#4353FF] opacity-80 overflow-hidden rounded-sm">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="rotate-45">
                         <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
                       </svg>
                     </div>
-                    <span className="text-[#1A212F] font-bold text-[13px] md:text-[14px]">Worldwide</span>
+                    <span className="text-[#1A212F] font-bold text-xs sm:text-[13px] md:text-[14px]">Worldwide</span>
                   </div>
                 </motion.div>
 
@@ -88,11 +88,11 @@ const AboutSection = () => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.6, duration: 0.8 }}
-                  className="absolute -right-8 md:-right-20 top-[15%] bg-[#E0F7FF] px-4 py-2 rounded-lg shadow-sm border border-white"
+                  className="absolute -right-4 sm:-right-8 md:-right-20 top-[15%] bg-[#E0F7FF] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-sm border border-white"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-[#1A212F] font-bold text-[13px] md:text-[14px]">Awards Won</span>
-                    <div className="w-5 h-5 text-[#0EA5E9] opacity-80 overflow-hidden rounded-sm">
+                    <span className="text-[#1A212F] font-bold text-xs sm:text-[13px] md:text-[14px]">Awards Won</span>
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 text-[#0EA5E9] opacity-80 overflow-hidden rounded-sm">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="-rotate-45">
                         <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
                       </svg>
@@ -100,7 +100,7 @@ const AboutSection = () => {
                   </div>
                 </motion.div>
 
-                <div className="absolute top-[8%] right-[18%] w-1.5 h-1.5 bg-red-500 rounded-full" />
+                <div className="absolute top-[8%] right-[18%] w-1 h-1 sm:w-1.5 sm:h-1.5 bg-red-500 rounded-full" />
               </div>
             </div>
 
@@ -114,7 +114,7 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="about-us-title"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-[#1A212F] mb-4 sm:mb-6"
                   style={{ fontFamily: 'Outfit, sans-serif' }}
                 >
                   Our team of designers, developers, and thinkers driven by <span className="text-[#003CFF]">one purpose — to craft digital experiences.</span>
@@ -124,7 +124,7 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4, duration: 0.8 }}
-                  className="text-[#718096] text-[16px] md:text-[18px] leading-relaxed mb-10"
+                  className="text-[#718096] text-sm sm:text-base md:text-lg lg:text-[18px] leading-relaxed mb-6 sm:mb-8 lg:mb-10"
                 >
                   We combine strategy, creativity, and technology to help brands grow in the modern digital landscape. Every project we take on is fueled by curiosity, guided by precision.
                 </motion.p>
@@ -135,10 +135,10 @@ const AboutSection = () => {
                   transition={{ delay: 0.5, duration: 0.8 }}
                   className="flex"
                 >
-                  <button className="group flex items-center bg-[#F1F6FF] hover:bg-[#E8F0FF] pl-7 pr-2 py-2 rounded-full transition-all duration-300 border border-white shadow-sm overflow-hidden">
-                    <span className="text-[#1A212F] font-bold text-[15px] md:text-[16px] mr-4">More About Us</span>
-                    <div className="w-10 h-10 bg-[#003CFF] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 shrink-0 shadow-lg shadow-blue-500/20">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <button className="group flex items-center w-full sm:w-auto justify-center sm:justify-start bg-[#F1F6FF] hover:bg-[#E8F0FF] px-6 sm:px-7 py-2.5 sm:py-2 rounded-full transition-all duration-300 border border-white shadow-sm overflow-hidden">
+                    <span className="text-[#1A212F] font-bold text-sm sm:text-[15px] md:text-[16px] mr-3 sm:mr-4">More About Us</span>
+                    <div className="w-10 h-10 sm:w-10 sm:h-10 bg-[#003CFF] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 shrink-0 shadow-lg shadow-blue-500/20">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
                       </svg>
                     </div>

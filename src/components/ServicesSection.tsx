@@ -47,14 +47,14 @@ const ServicesSection = () => {
       ref={sectionRef}
       style={{
         background: "#fff",
-        padding: "100px 0 120px",
+        padding: "clamp(40px, 10vw, 120px) 0",
       }}
     >
       <div
         style={{
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "0 40px",
+          padding: "0 clamp(16px, 5vw, 40px)",
         }}
       >
         {/* ── Section Header Entrance Animation ── */}
@@ -104,6 +104,7 @@ const ServicesSection = () => {
           transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           style={{
             display: "flex",
+            flexDirection: window.innerWidth < 768 ? "column" : "row",
             background: "#F2F5FF",
             borderRadius: 40,
             overflow: "hidden",
@@ -114,14 +115,15 @@ const ServicesSection = () => {
 
           {/* ── LEFT panel ── */}
           <div style={{
-            width: 320,
+            width: window.innerWidth < 768 ? "100%" : 320,
             flexShrink: 0,
             background: "#EEF2FF",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            padding: "40px",
-            borderRight: "1px solid rgba(0,60,255,0.08)",
+            padding: "clamp(24px, 5vw, 40px)",
+            borderRight: window.innerWidth < 768 ? "none" : "1px solid rgba(0,60,255,0.08)",
+            borderBottom: window.innerWidth < 768 ? "1px solid rgba(0,60,255,0.08)" : "none",
             position: "relative",
           }}>
             {/* Number Crossfade */}
@@ -160,16 +162,16 @@ const ServicesSection = () => {
                   <img
                     src={current.icon}
                     alt={current.title}
-                    style={{ width: 160, height: 160, objectFit: "contain" }}
+                    style={{ width: "clamp(100px, 20vw, 160px)", height: "clamp(100px, 20vw, 160px)", objectFit: "contain" }}
                   />
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* View Details button */}
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
               <span style={{
-                fontSize: 16, fontWeight: 700, color: "#1A212F",
+                fontSize: "clamp(14px, 2vw, 16px)", fontWeight: 700, color: "#1A212F",
                 fontFamily: "Outfit, sans-serif",
               }}>
                 View Details
@@ -209,18 +211,19 @@ const ServicesSection = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    padding: "30px 40px",
+                    flexDirection: window.innerWidth < 640 ? "column" : "row",
+                    padding: "clamp(16px, 4vw, 30px) clamp(12px, 4vw, 40px)",
                     cursor: "pointer",
                     borderBottom: i < services.length - 1
                       ? "1px solid rgba(0,60,255,0.06)"
                       : "none",
                     background: isActive ? "rgba(255,255,255,0.6)" : "transparent",
                     transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-                    minHeight: isActive ? 160 : 100,
+                    minHeight: isActive && window.innerWidth >= 768 ? 160 : "auto",
                   }}
                 >
                   {/* Left: Bullet + Content */}
-                  <div style={{ flex: 1, display: "flex", alignItems: "flex-start", gap: 14 }}>
+                  <div style={{ flex: 1, display: "flex", alignItems: "flex-start", gap: 14, width: window.innerWidth < 640 ? "100%" : "auto" }}>
                     <div style={{ width: 12, height: 32, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <AnimatePresence>
                         {isActive && (
@@ -240,7 +243,7 @@ const ServicesSection = () => {
 
                     <div>
                       <h3 style={{
-                        fontSize: "clamp(24px, 2.5vw, 32px)",
+                        fontSize: "clamp(18px, 2.5vw, 32px)",
                         fontWeight: 700,
                         color: isActive ? "#003CFF" : "#1A212F",
                         fontFamily: "Outfit, sans-serif",
@@ -264,7 +267,7 @@ const ServicesSection = () => {
                             <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16 }}>
                               {svc.tags.map((tag, ti) => (
                                 <span key={ti} style={{
-                                  fontSize: 11, fontWeight: 700, letterSpacing: "0.08em",
+                                  fontSize: "clamp(9px, 1.5vw, 11px)", fontWeight: 700, letterSpacing: "0.08em",
                                   textTransform: "uppercase", color: "#64748B",
                                   background: "#E2E8F0",
                                   padding: "6px 14px", borderRadius: 8,
@@ -282,7 +285,7 @@ const ServicesSection = () => {
                   </div>
 
                   {/* Thumbnail (Always visible but highlighted) */}
-                  <div style={{ position: "relative", width: 140, height: 80, marginLeft: 20 }}>
+                  <div style={{ position: "relative", width: "clamp(80px, 25vw, 140px)", height: "clamp(60px, 15vw, 80px)", marginLeft: window.innerWidth < 640 ? 0 : 20, marginTop: window.innerWidth < 640 ? 12 : 0 }}>
                     <img
                       src={svc.image}
                       alt={svc.title}
