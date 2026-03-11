@@ -36,7 +36,7 @@ const AboutSection = () => {
       <section
         id="about-us"
         ref={containerRef}
-        className="py-12 sm:py-18 md:py-24 lg:py-32 bg-white overflow-hidden"
+        className="py-20 sm:py-18 md:py-24 lg:py-32 bg-white overflow-hidden"
       >
         <div className="section-container">
           <div className="flex flex-col lg:flex-row items-center lg:items-center lg:gap-20">

@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section ref={containerRef} className="relative h-[300vh] bg-white">
       {/* Sticky Container */}
-      <div className="sticky top-0 h-screen w-full flex flex-col overflow-hidden pt-16 sm:pt-20 md:pt-32 lg:pt-48">
+      <div className="sticky top-0 h-screen w-full flex flex-col overflow-hidden pt-24 sm:pt-20 md:pt-32 lg:pt-48">
         
         {/* Background Grid & Gradient */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        <div className="section-container relative z-10 w-full mt-[115px] sm:mt-auto">
+        <div className="section-container relative z-10 w-full mt-[165px] sm:mt-auto">
           {/* main "VISION" text area */}
           <div className="flex items-center justify-center w-full select-none mb-6 sm:mb-8 md:mb-12 lg:mb-20">
             <motion.div
