@@ -98,6 +98,8 @@ const HeroSection = () => {
                     width={340}
                     height={150}
                     className="w-full h-full object-cover"
+                    fetchPriority="high"
+                    loading="eager"
                   />
                   {/* Subtle glass effect that fades as we zoom */}
                   <motion.div 
