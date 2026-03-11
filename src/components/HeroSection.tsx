@@ -48,9 +48,9 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        <div className="section-container relative z-10 w-full mt-auto">
+        <div className="section-container relative z-10 w-full mt-[115px] sm:mt-auto">
           {/* main "VISION" text area */}
-          <div className="flex items-center justify-center w-full select-none mb-12 lg:mb-20">
+          <div className="flex items-center justify-center w-full select-none mb-6 sm:mb-8 md:mb-12 lg:mb-20">
             <motion.div
               initial="visible"
               animate="visible"

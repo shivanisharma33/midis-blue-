@@ -65,20 +65,20 @@ const AwardCard = ({ title, sub, logo, cardH, radius, innerOp, translateY }: Car
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: "24px 24px 28px",
+        padding: "clamp(16px, 4vw, 24px) clamp(16px, 4vw, 24px) clamp(16px, 4vw, 28px)",
       }}
     >
       {/* ── Meta ── */}
       <div>
         <p style={{
-          fontSize: 10, fontWeight: 700, letterSpacing: "0.15em",
+          fontSize: "clamp(8px, 1.5vw, 10px)", fontWeight: 700, letterSpacing: "0.15em",
           color: "#003CFF", textTransform: "uppercase",
           fontFamily: "Outfit, sans-serif", margin: "0 0 6px",
         }}>
           {sub}
         </p>
         <h3 style={{
-          fontSize: 20, fontWeight: 800, color: "#1A212F",
+          fontSize: "clamp(14px, 3vw, 20px)", fontWeight: 800, color: "#1A212F",
           fontFamily: "Outfit, sans-serif", lineHeight: 1.2,
           letterSpacing: "-0.02em", margin: 0,
         }}>
@@ -94,7 +94,7 @@ const AwardCard = ({ title, sub, logo, cardH, radius, innerOp, translateY }: Car
         flex: 1,
         paddingTop: 12,
       }}>
-        <img src={logo} alt={title} style={{ width: 80, height: 80, objectFit: "contain" }} />
+        <img src={logo} alt={title} style={{ width: "clamp(50px, 15vw, 80px)", height: "clamp(50px, 15vw, 80px)", objectFit: "contain" }} />
       </div>
     </motion.div>
   </motion.div>
@@ -155,10 +155,10 @@ const AwardsMarquee = () => {
           style={{
             width: "100%",
             maxWidth: 1280,
-            padding: "0 40px",
+            padding: "0 clamp(16px, 5vw, 40px)",
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 20,
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "clamp(12px, 4vw, 20px)",
             alignItems: "start",
           }}
         >
@@ -168,9 +168,9 @@ const AwardsMarquee = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 20,
+                gap: "clamp(12px, 4vw, 20px)",
                 /* Center column staggered 60 px lower — creates the V / zigzag */
-                marginTop: ci === 1 ? 60 : 0,
+                marginTop: ci === 1 ? "clamp(30px, 8vw, 60px)" : 0,
               }}
             >
               {/* Row 1 card */}

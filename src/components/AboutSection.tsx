@@ -174,11 +174,11 @@ const AboutSection = () => {
               width: "100%",
               maxWidth: "1400px",
               margin: "0 auto",
-              padding: "0 24px",
+              padding: "0 clamp(16px, 5vw, 24px)",
               display: "flex",
-              flexDirection: "row",
+              flexDirection: window.innerWidth < 768 ? "column" : "row",
               alignItems: "stretch",
-              gap: "32px",
+              gap: "clamp(16px, 5vw, 32px)",
             }}
           >
             {/* ── LEFT: Slide-down then Zoom ── */}
@@ -192,7 +192,7 @@ const AboutSection = () => {
                 overflow: "hidden",
                 cursor: "pointer",
                 flexShrink: 0,
-                width: "38%",
+                width: window.innerWidth < 768 ? "100%" : "38%",
                 aspectRatio: "16/8.5",
                 background: "#E2E8F0",
                 zIndex: 10,
@@ -207,15 +207,22 @@ const AboutSection = () => {
               </div>
               {/* Pause button */}
               <div style={{
-                position: "absolute", left: 32, bottom: 32,
-                width: 56, height: 56, borderRadius: "50%",
-                background: "rgba(255,255,255,0.25)", backdropFilter: "blur(12px)",
-                display: "flex", alignItems: "center", justifyContent: "center",
+                position: "absolute",
+                left: window.innerWidth < 768 ? 16 : 32,
+                bottom: window.innerWidth < 768 ? 16 : 32,
+                width: window.innerWidth < 768 ? 48 : 56,
+                height: window.innerWidth < 768 ? 48 : 56,
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.25)",
+                backdropFilter: "blur(12px)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 border: "1px solid rgba(255,255,255,0.4)",
               }}>
-                <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                  <div style={{ width: 6, height: 24, background: "#fff", borderRadius: 4 }} />
-                  <div style={{ width: 6, height: 24, background: "#fff", borderRadius: 4 }} />
+                <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+                  <div style={{ width: window.innerWidth < 768 ? 4 : 6, height: window.innerWidth < 768 ? 20 : 24, background: "#fff", borderRadius: 4 }} />
+                  <div style={{ width: window.innerWidth < 768 ? 4 : 6, height: window.innerWidth < 768 ? 20 : 24, background: "#fff", borderRadius: 4 }} />
                 </div>
               </div>
             </motion.div>
@@ -229,40 +236,97 @@ const AboutSection = () => {
                 flex: 1,
                 background: "#F2F7FF",
                 borderRadius: 60,
-                padding: 24,
+                padding: window.innerWidth < 768 ? 16 : 24,
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: window.innerWidth < 768 ? "column" : "row",
                 alignItems: "center",
-                gap: 48,
+                gap: window.innerWidth < 768 ? 24 : 48,
                 border: "1px solid rgba(255,255,255,0.5)",
                 boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
               }}
             >
               {/* Blue Icon Box */}
               <div style={{
-                width: 240, height: 220, flexShrink: 0,
+                width: window.innerWidth < 768 ? "100%" : 240,
+                height: window.innerWidth < 768 ? "auto" : 220,
+                flexShrink: 0,
                 background: "linear-gradient(135deg, #003CFF, #0052FF)",
-                borderRadius: 50, display: "flex", alignItems: "center", justifyContent: "center",
-                position: "relative", overflow: "hidden",
+                borderRadius: 50,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+                overflow: "hidden",
                 boxShadow: "0 15px 40px rgba(0,60,255,0.15)",
+                aspectRatio: window.innerWidth < 768 ? "16/9" : undefined,
               }}>
                 <img
                   src="/images/about-stat-image.jpg"
                   alt="Stat"
-                  style={{ width: 220, height: 240, objectFit: "contain", position: "relative", zIndex: 1 }}
+                  style={{
+                    width: window.innerWidth < 768 ? "100%" : 220,
+                    height: window.innerWidth < 768 ? "100%" : 240,
+                    objectFit: "contain",
+                    position: "relative",
+                    zIndex: 1
+                  }}
                 />
               </div>
 
               {/* Stats */}
-              <div style={{ display: "flex", flex: 1, alignItems: "center", justifyContent: "space-between", padding: "0 8px" }}>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h4 style={{ fontSize: 76, fontWeight: 900, color: "#1A212F", lineHeight: 1, marginBottom: 12, fontFamily: "Outfit, sans-serif", letterSpacing: "-0.04em" }}>95%</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#718096", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.5, maxWidth: 140 }}>Clients Satisfied and<br />Repeating</p>
+              <div style={{
+                display: "flex",
+                flex: 1,
+                width: window.innerWidth < 768 ? "100%" : undefined,
+                alignItems: "center",
+                justifyContent: window.innerWidth < 768 ? "space-around" : "space-between",
+                padding: window.innerWidth < 768 ? "0 0" : "0 8px"
+              }}>
+                <div style={{ display: "flex", flexDirection: "column", textAlign: window.innerWidth < 768 ? "center" : "left" }}>
+                  <h4 style={{
+                    fontSize: window.innerWidth < 768 ? 48 : 76,
+                    fontWeight: 900,
+                    color: "#1A212F",
+                    lineHeight: 1,
+                    marginBottom: 12,
+                    fontFamily: "Outfit, sans-serif",
+                    letterSpacing: "-0.04em"
+                  }}>95%</h4>
+                  <p style={{
+                    fontSize: window.innerWidth < 768 ? 10 : 11,
+                    fontWeight: 700,
+                    color: "#718096",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    lineHeight: 1.5,
+                    maxWidth: window.innerWidth < 768 ? 100 : 140
+                  }}>Clients Satisfied and Repeating</p>
                 </div>
-                <div style={{ width: 1, height: 80, background: "#D1DBFF", opacity: 0.5 }} />
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <h4 style={{ fontSize: 76, fontWeight: 900, color: "#1A212F", lineHeight: 1, marginBottom: 12, fontFamily: "Outfit, sans-serif", letterSpacing: "-0.04em" }}>125+</h4>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: "#718096", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.5, maxWidth: 160 }}>Projects Completed<br />in 24 Countries</p>
+                <div style={{
+                  width: window.innerWidth < 768 ? 0.5 : 1,
+                  height: window.innerWidth < 768 ? 60 : 80,
+                  background: "#D1DBFF",
+                  opacity: 0.5
+                }} />
+                <div style={{ display: "flex", flexDirection: "column", textAlign: window.innerWidth < 768 ? "center" : "left" }}>
+                  <h4 style={{
+                    fontSize: window.innerWidth < 768 ? 48 : 76,
+                    fontWeight: 900,
+                    color: "#1A212F",
+                    lineHeight: 1,
+                    marginBottom: 12,
+                    fontFamily: "Outfit, sans-serif",
+                    letterSpacing: "-0.04em"
+                  }}>125+</h4>
+                  <p style={{
+                    fontSize: window.innerWidth < 768 ? 10 : 11,
+                    fontWeight: 700,
+                    color: "#718096",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    lineHeight: 1.5,
+                    maxWidth: window.innerWidth < 768 ? 110 : 160
+                  }}>Projects Completed in 24 Countries</p>
                 </div>
               </div>
             </motion.div>
